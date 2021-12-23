@@ -1,12 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import {createStore} from 'fluxible-js';
+import {ThemeProvider} from '@material-ui/core';
+
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import theme from './theme';
+
+createStore({
+  initialStore: {
+    authUser: null
+  },
+  persist: {
+    syncStorage: window.localStorage,
+    restore ({authUser}){
+      return {authUser};
+    }
+  }
+})
 
 ReactDOM.render(
+  
   <React.StrictMode>
-    <App />
+    <ThemeProvider theme={theme}>
+      <App />
+    </ThemeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
