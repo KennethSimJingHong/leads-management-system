@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "leadsmanagementsyste",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "/Users/kennethsim/WebsiteProjects/aws-training/leads-management-system/amplify/backend/api/leadsmanagementsyste/schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authleadsmanagementsyste1397cb211397cb21"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 90,
+        "apiKeyExpirationDate": "2022-03-23T14:16:26.864Z",
+        "keyDescription": ""
+      },
+      {
+        "mode": "AWS_IAM"
+      }
+    ]
+  }
+}

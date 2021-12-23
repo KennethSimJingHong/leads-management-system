@@ -1,0 +1,14 @@
+{
+  "resourceName": "s349b9a620",
+  "policyUUID": "49b9a620",
+  "bucketName": "leadsmanagementsystede65e31f3aea44e68ed35c4c81c",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}
