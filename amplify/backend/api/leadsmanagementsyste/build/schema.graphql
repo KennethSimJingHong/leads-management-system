@@ -10,6 +10,6 @@ type User
     firstName: String
     middleName: String
     lastName: String
-    createAt:AWSDateTime
-    updateAt: AWSDateTime
+    createdAt:AWSDateTime
+    updatedAt: AWSDateTime
   }
