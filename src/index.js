@@ -7,6 +7,10 @@ import {createFluxibleHook} from 'react-fluxible';
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import theme from "./theme";
+import {configure} from 'aws-amplify';
+import awsExports from './aws-exports';
+
+configure(awsExports);
 
 export const globalStore = createStore({
   initialStore: {

@@ -153,18 +153,3 @@ type Subscription {
   onDeleteTodo: Todo @aws_subscribe(mutations: ["deleteTodo"]) @aws_api_key
 }
 
-type User
-  @model
-  @auth(
-    rules: [
-      {allow:private, groups: ["admins"]}
-      {allow: public, provider: iam}
-    ]
-  ){
-    id: ID!
-    firstName: String
-    middleName: String
-    lastName: String
-    createdAt:AWSDateTime
-    updatedAt: AWSDateTime
-  }

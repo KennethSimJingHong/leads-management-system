@@ -83,7 +83,7 @@ const Login = () => {
         try{
             const user = await Auth.signIn(email.input, password.input);
         }catch(error){
-            
+            globalStore.updateStore({loading:false});
         }
 
     }, [email.input, password.input]);
