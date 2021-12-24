@@ -1,0 +1,66 @@
+{
+    "auth": {
+      "leadsmanagementsyste1397cb211397cb21": {
+        "service": "Cognito",
+        "providerPlugin": "awscloudformation",
+        "dependsOn": [],
+        "customAuth": false,
+        "frontendAuthConfig": {
+          "socialProviders": [],
+          "usernameAttributes": [
+            "EMAIL"
+          ],
+          "signupAttributes": [
+            "EMAIL"
+          ],
+          "passwordProtectionSettings": {
+            "passwordPolicyMinLength": "6",
+            "passwordPolicyCharacters": []
+          },
+          "mfaConfiguration": "OFF",
+          "mfaTypes": [
+            "SMS"
+          ],
+          "verificationMechanisms": [
+            "EMAIL"
+          ]
+        }
+      }
+    },
+    "storage": {
+      "s349b9a620": {
+        "service": "S3",
+        "providerPlugin": "awscloudformation",
+        "dependsOn": []
+      }
+    },
+    "api": {
+      "leadsmanagementsyste": {
+        "service": "AppSync",
+        "providerPlugin": "awscloudformation",
+        "output": {
+          "authConfig": {
+            "defaultAuthentication": {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authleadsmanagementsyste1397cb211397cb21"
+              }
+            },
+            "additionalAuthenticationProviders": [
+              {
+                "authenticationType": "API_KEY",
+                "apiKeyConfig": {
+                  "apiKeyExpirationDays": 90,
+                  "apiKeyExpirationDate": "2022-03-23T14:16:26.864Z",
+                  "description": ""
+                }
+              },
+              {
+                "authenticationType": "AWS_IAM"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
