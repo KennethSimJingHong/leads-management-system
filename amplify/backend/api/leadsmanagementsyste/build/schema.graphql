@@ -1,0 +1,15 @@
+type User
+  @model
+  @auth(
+    rules: [
+      {allow:private, group: ["admins"]}
+      {allow: public, provider: iam}
+    ]
+  ){
+    id: ID!
+    firstName: String
+    middleName: String
+    lastName: String
+    createAt:AWSDateTime
+    updateAt: AWSDateTime
+  }
