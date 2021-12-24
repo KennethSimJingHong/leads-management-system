@@ -2,14 +2,16 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createStore } from "fluxible-js";
 import { ThemeProvider } from "@material-ui/core";
+import {createFluxibleHook} from 'react-fluxible';
 
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import theme from "./theme";
 
-createStore({
+export const globalStore = createStore({
   initialStore: {
     authUser: null,
+    loading: false
   },
   persist: {
     syncStorage: window.localStorage,
@@ -17,7 +19,10 @@ createStore({
       return { authUser };
     },
   },
+  
 });
+
+export const useGlobalStore = createFluxibleHook(globalStore);
 
 ReactDOM.render(
   <React.StrictMode>
