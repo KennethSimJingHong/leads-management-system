@@ -1,6 +1,7 @@
 import React, { useCallback, useState } from 'react';
 import { Box, Button, Divider, makeStyles, Paper, TextField, Typography } from '@material-ui/core';
 import { globalStore } from '../..';
+import {Auth} from 'aws-amplify';
 
 const useStyles = makeStyles(({spacing}) => { 
     return {
@@ -69,7 +70,6 @@ const Login = () => {
                     error: passwordError
                 }
             }))
-
             return;
         }
 
@@ -83,6 +83,7 @@ const Login = () => {
         try{
             const user = await Auth.signIn(email.input, password.input);
         }catch(error){
+            console.log(error)
             globalStore.updateStore({loading:false});
         }
 
@@ -98,7 +99,6 @@ const Login = () => {
 
     function validatePassword(password){
         if(!password) return 'Required.';
-
     }
 
     return (
